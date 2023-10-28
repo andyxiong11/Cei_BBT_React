@@ -1,9 +1,8 @@
-function App() {
+import Index from "./components/Index";
+export default function App() {
   return (
     <div>
-      App
+      <Index/>
     </div>
   );
 }
-
-export default App;
