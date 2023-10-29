@@ -1,7 +1,13 @@
 import React from "react";
 // Layout布局；Row, Col栅格组件；Menu导航菜单；Input输入框；Button按钮；Carousel跑马灯
-import { Layout, Row, Col, Menu, Input, Button, Carousel } from "antd";
-import { UnorderedListOutlined, SearchOutlined } from "@ant-design/icons"; //TODO新版本antd，按需引入
+import { Layout, Row, Col, Menu, Input, Button, Carousel, Affix } from "antd";
+import {
+  UnorderedListOutlined,
+  VerticalAlignTopOutlined,
+  QrcodeOutlined,
+  FormOutlined,
+  PhoneOutlined,
+} from "@ant-design/icons"; //TODO新版本antd，按需引入
 import "./index.css";
 
 export default function index() {
@@ -21,7 +27,7 @@ export default function index() {
             float: "left",
           }}
         >
-          <Row gutter={16} type="flex" justify="center" >
+          <Row gutter={16} type="flex" justify="center">
             <Col>
               {/* horizontal 菜单水平
               theme 主题
@@ -90,7 +96,7 @@ export default function index() {
               </span>
             </Col>
             {/* TODORow全局align="middle" 对imh无效  */}
-            <Col style={{ display: "flex", alignItems: "center"}}>
+            <Col style={{ display: "flex", alignItems: "center" }}>
               <img
                 src="../../../download.png"
                 alt="加载中"
@@ -122,6 +128,36 @@ export default function index() {
         </Header>
         {/* 内容区 */}
         <Content style={{ marginTop: 64 }}>
+          {/* 图钉 */}
+          <Affix offsetTop={400}>
+            {/* TODO float:"right" 图钉靠右*/}
+            <ul
+              style={{
+                float: "right",
+                width: "60px",
+                listStyle: "none",
+                color: "#888",
+                marginRight:"20px"
+              }}
+            >
+              <li className="li_css">
+                <VerticalAlignTopOutlined style={{ fontSize: "30px" }} />
+                <span>置顶</span>
+              </li>
+              <li className="li_css">
+                <QrcodeOutlined style={{ fontSize: "30px" }} />
+                西尔下载
+              </li>
+              <li className="li_css">
+                <FormOutlined style={{ fontSize: "30px" }} />
+                留言板
+              </li>
+              <li className="li_css">
+                <PhoneOutlined style={{ fontSize: "30px" }} />
+                西尔客服
+              </li>
+            </ul>
+          </Affix>
           {/* 轮播图 */}
           <Carousel autoplay>
             <div>
@@ -173,6 +209,21 @@ export default function index() {
               />
             </div>
           </Carousel>
+          <Row type="flex" justify="center">
+              <Col>
+                <img src="../../../shizhanlianbin.jpg"/>
+              </Col>
+              <Col>
+                <img src="../../../shizhanlianbin_long.jpg"/>
+              </Col>
+              <Col>
+                <img src="../../../jianbinpeixun.jpg"/>
+              </Col>
+              <Col>
+                <img src="../../../zhishijingsai.jpg"/>
+              </Col>
+          </Row>
+          <div style={{height:"1000px",backgroundColor:"pink"}}></div>
         </Content>
         {/* 底部 */}
         <Footer style={{ textAlign: "center" }}>
