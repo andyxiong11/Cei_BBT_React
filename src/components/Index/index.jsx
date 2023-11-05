@@ -8,6 +8,8 @@ import {
   FormOutlined,
   PhoneOutlined,
 } from "@ant-design/icons"; //TODO新版本antd，按需引入
+import Accordion from '../Accordion'
+import Floor from '../Floor'
 import "./index.css";
 
 export default function index() {
@@ -209,7 +211,8 @@ export default function index() {
               />
             </div>
           </Carousel>
-          <Row type="flex" justify="center">
+          <Accordion/>
+          {/* <Row type="flex" justify="center">
               <Col>
                 <img src="../../../shizhanlianbin.jpg"/>
               </Col>
@@ -222,8 +225,35 @@ export default function index() {
               <Col>
                 <img src="../../../zhishijingsai.jpg"/>
               </Col>
-          </Row>
-          <div style={{height:"1000px",backgroundColor:"pink"}}></div>
+          </Row> */}
+          {/* 培训专栏 */}
+          <div style={{width:"100%",height:"700px"}}>
+            {/* 标题 */}
+            <div style={{height:"40px",
+                         margin:"20px auto",
+                         textAlign:"center",
+                         display:"flex",
+                         // 垂直居中
+                         alignItems:"center",
+                        //  水平居中
+                         justifyContent: "center"}}>
+              {/* TODO图片位置写法 */}
+              <img src='../../../tree.png' style={{height: "40px",marginRight: "10px"}}/>
+              <span style={{height: "40px",
+                            lineHeight: "40px",
+                            width: "165px",
+                            fontSize: "36px",
+                            // 两端对齐
+                            textAlign: "justify",
+                            // 字符间距
+                            letterSpacing: "2px",
+                    }}>培训专栏</span>
+              <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
+            </div>
+            <Floor/>
+          </div>
+
+          {/* <div style={{height:"1000px",backgroundColor:"pink"}}></div> */}
         </Content>
         {/* 底部 */}
         <Footer style={{ textAlign: "center" }}>
