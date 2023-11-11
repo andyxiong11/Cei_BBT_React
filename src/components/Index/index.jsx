@@ -227,7 +227,7 @@ export default function index() {
               </Col>
           </Row> */}
           {/* 培训专栏 */}
-          <div style={{width:"100%",height:"700px"}}>
+          <div style={{width:"100%"}}>
             {/* 标题 */}
             <div style={{height:"40px",
                          margin:"20px auto",
@@ -251,9 +251,10 @@ export default function index() {
               <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
             </div>
             <Floor/>
+            <Floor/>
+            <Floor/>
+            <Floor/>
           </div>
-
-          {/* <div style={{height:"1000px",backgroundColor:"pink"}}></div> */}
         </Content>
         {/* 底部 */}
         <Footer style={{ textAlign: "center" }}>
