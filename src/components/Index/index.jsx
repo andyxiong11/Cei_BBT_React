@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons"; //TODO新版本antd，按需引入
 import Accordion from '../Accordion'
 import Floor from '../Floor'
+import EchartsMap from '../EchartsMap'
 import "./index.css";
 
 export default function index() {
@@ -255,7 +256,35 @@ export default function index() {
             <Floor/>
             <Floor/>
           </div>
+          <div style={{height: "160px",padding: "15px 0",display:"flex",justifyContent: "center",alignItems:"center"}}>
+            <img style={{height:"55px",width: "80vw",maxWidth: "1230px"}} src="https://www.cei.net.cn/static/leiji.70cfcad9.png"/>
+          </div>
+          <div>
+            {/* 标题 */}
+            <div style={{height:"40px",
+                         margin:"20px auto",
+                         textAlign:"center",
+                         display:"flex",
+                         // 垂直居中
+                         alignItems:"center",
+                        //  水平居中
+                         justifyContent: "center"}}>
+              {/* TODO图片位置写法 */}
+              <img src='../../../tree.png' style={{height: "40px",marginRight: "10px"}}/>
+              <span style={{height: "40px",
+                            lineHeight: "40px",
+                            width: "165px",
+                            fontSize: "36px",
+                            // 两端对齐
+                            textAlign: "justify",
+                            // 字符间距
+                            letterSpacing: "2px",
+                    }}>培训专栏</span>
+              <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
+            </div>
+          </div>
         </Content>
+        <EchartsMap></EchartsMap>
         {/* 底部 */}
         <Footer style={{ textAlign: "center",backgroundColor:"#fff" }}>
           Ant Design ©2018 Created by Ant UED
