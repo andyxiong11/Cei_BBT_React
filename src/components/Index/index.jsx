@@ -129,7 +129,7 @@ export default function index() {
           </Row>
         </Header>
         {/* 内容区 */}
-        <Content style={{ marginTop: 64 }}>
+        <Content style={{ marginTop: 64,backgroundColor:"#fff"}}>
           {/* 图钉 */}
           <Affix offsetTop={400}>
             {/* TODO float:"right" 图钉靠右*/}
@@ -257,7 +257,7 @@ export default function index() {
           </div>
         </Content>
         {/* 底部 */}
-        <Footer style={{ textAlign: "center" }}>
+        <Footer style={{ textAlign: "center",backgroundColor:"#fff" }}>
           Ant Design ©2018 Created by Ant UED
         </Footer>
       </Layout>
