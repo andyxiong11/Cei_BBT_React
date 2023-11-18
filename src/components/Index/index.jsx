@@ -259,6 +259,7 @@ export default function index() {
           <div style={{height: "160px",padding: "15px 0",display:"flex",justifyContent: "center",alignItems:"center"}}>
             <img style={{height:"55px",width: "80vw",maxWidth: "1230px"}} src="https://www.cei.net.cn/static/leiji.70cfcad9.png"/>
           </div>
+          {/* 培训数据 */}
           <div>
             {/* 标题 */}
             <div style={{height:"40px",
@@ -279,15 +280,135 @@ export default function index() {
                             textAlign: "justify",
                             // 字符间距
                             letterSpacing: "2px",
-                    }}>培训专栏</span>
+                    }}>培训数据</span>
               <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
             </div>
+            {/* 地图 */}
+            <EchartsMap></EchartsMap>
+          </div>
+          {/* 西尔荣誉 */}
+          <div>
+            {/* 标题 */}
+            <div style={{height:"40px",
+                         margin:"20px auto",
+                         textAlign:"center",
+                         display:"flex",
+                         // 垂直居中
+                         alignItems:"center",
+                        //  水平居中
+                         justifyContent: "center"}}>
+              {/* TODO图片位置写法 */}
+              <img src='../../../tree.png' style={{height: "40px",marginRight: "10px"}}/>
+              <span style={{height: "40px",
+                            lineHeight: "40px",
+                            width: "165px",
+                            fontSize: "36px",
+                            // 两端对齐
+                            textAlign: "justify",
+                            // 字符间距
+                            letterSpacing: "2px",
+                    }}>西尔荣誉</span>
+              <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
+            </div>
+            {/* 轮播图 */}
+            <Carousel autoplay>
+              <div >
+                <img style={{width:"100%"}} src="https://www.cei.net.cn/static/home_zhengshu1.6f426679.jpg"/>
+              </div>
+              <div>
+                <img style={{width:"100%"}} src="https://www.cei.net.cn/static/home_zhengshu2.6c9d769f.jpg"/>
+              </div>
+              <div>
+                <img style={{width:"100%"}} src="	https://www.cei.net.cn/static/home_zhengshu3.ae3cd6d3.jpg"/>
+              </div>
+            </Carousel>
+          </div>
+          {/* 课程优势 */}
+          <div>
+            {/* 标题 */}
+            <div style={{height:"40px",
+                         margin:"20px auto",
+                         textAlign:"center",
+                         display:"flex",
+                         // 垂直居中
+                         alignItems:"center",
+                        //  水平居中
+                         justifyContent: "center"}}>
+              {/* TODO图片位置写法 */}
+              <img src='../../../tree.png' style={{height: "40px",marginRight: "10px"}}/>
+              <span style={{height: "40px",
+                            lineHeight: "40px",
+                            width: "165px",
+                            fontSize: "36px",
+                            // 两端对齐
+                            textAlign: "justify",
+                            // 字符间距
+                            letterSpacing: "2px",
+                    }}>课程优势</span>
+              <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
+            </div>
+            <Row type="flex" justify="center" gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
+              <Col>
+                <img src="../../../luoshijichu.png"/>
+              </Col>
+              <Col>
+                <img src="../../../luoshijichu.png"/>
+              </Col>
+              <Col>
+                <img src="../../../luoshijichu.png"/>
+              </Col>
+              <Col>
+                <img src="../../../luoshijichu.png"/>
+              </Col>
+              <Col>
+                <img src="../../../luoshijichu.png"/>
+              </Col>
+            </Row>
           </div>
         </Content>
-        <EchartsMap></EchartsMap>
         {/* 底部 */}
-        <Footer style={{ textAlign: "center",backgroundColor:"#fff" }}>
-          Ant Design ©2018 Created by Ant UED
+        <Footer style={{ textAlign: "center",backgroundColor:"#000",paddingTop: "80px" }}>
+          <Row  type="flex" justify="center" gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
+            <Col span={4} style={{color:"#fff"}}>
+              <p>客服咨询</p>
+              <p>服务电话：024-23407031</p>
+              <p>在线客服：立即咨询</p>
+              <p>服务邮箱：passport@cei.net.cn</p>
+              <p>周一至周五：9:00-18:00</p>
+            </Col>
+            <Col span={10} style={{color:"#fff",width:"auto"}}>  
+              <Row type="flex" justify="center" gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
+                <Col style={{color:"#fff"}}>生态环境部及直属单位</Col>
+                <Col style={{color:"#fff"}}>各省市服务单位</Col>
+              </Row>
+              <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
+                <Col><a href="http://zfj.mee.gov.cn">生态环境执法局</a></Col>
+                <Col><a href="http://jcs.mee.gov.cn">生态环境监测司</a></Col>
+                <Col><a href="http://rss.mee.gov.cn">行政体制与人事司</a></Col>
+                <Col><a href="http://qhs.mee.gov.cn">应对气候变化司</a></Col>
+                <Col><a href="http://www.cnemc.cn">中国环境监测总站</a></Col>
+                <Col><a href="http://www.chinaeol.net">环保部宣传教育中心</a></Col>
+                <Col><a href="https://yjb.mee.gov.cn/">环境应急与事故调查中心</a></Col>
+                <Col><a href="http://www.cenews.com.cn">中国环境报社</a></Col>
+                <Col><a href="http://www.caep.org.cn/">环境规划院</a></Col>
+                <Col><a href="http://zfj.mee.gov.cn">中国-东盟环境保护合作中心</a></Col>
+                <Col><a href="http://www.edcmep.org.cn">中日友好环境保护中心（环境发展中心）</a></Col>
+                <Col><a href="http://www.prcee.org">环境与经济政策研究中心</a></Col>
+                <Col><a href="http://www.sepact.com">北京会议与培训基地</a></Col>
+                <Col><a href="http://www.bdhetec.com.cn">北戴河环境技术交流中心</a></Col>
+              </Row>
+            </Col>
+            <Col span={2} style={{color:"#fff"}}>快速入口</Col>
+            <Col span={2} style={{color:"#fff"}}>关于我们</Col>
+          </Row>
+          <div style={{color:"#fff",marginBottom:"0"}} >
+            <span>
+              Copyright2023 西尔环境教育（CEI）版权所有 主办单位：北京西尔云教育科技有限公司&nbsp;
+              <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">京ICP备19011394号-2</a> 
+              出版物经营许可证：
+              <a href="/front/cert" target="_blank" rel="noopener noreferrer">新出发京零字第海180213号</a>
+            </span>
+          </div>
         </Footer>
       </Layout>
     </div>
