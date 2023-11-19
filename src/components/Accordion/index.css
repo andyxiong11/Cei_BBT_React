@@ -1,14 +1,16 @@
-.list{
+/* .list{
   width: 200px;
   height: 270px;
   float:left;
-}
+} */
 /* .list:nth-child(4){
   margin-left: -660px;
 } */
-.list_long{
+/* .list_long{
   width: 660px;
   height: 270px;
   float:left;
+} */
+.ant-collapse-header{
+  width: 195px;
 }
-
