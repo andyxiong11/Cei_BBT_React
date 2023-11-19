@@ -71,3 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - 安装ant-design npm install antd --save
 - 暴露webpack全部配置 npm run eject
+- 安装swiper npm install swiper
