@@ -25,6 +25,33 @@ export default function index() {
   const { Header, Footer, Content } = Layout;
   const { SubMenu } = Menu;
   const { Search } = Input;
+  const merit = [
+    {
+      src:'../../../luoshijichu.png',
+      title1:'落实基础',
+      title2:'课程优势'
+    },
+    {
+      src:'../../../fencengjiaoxue.png',
+      title1:'分层教学',
+      title2:'课程优势'
+    },
+    {
+      src:'https://www.cei.net.cn/static/answer.06d5be39.png',
+      title1:'效果反馈',
+      title2:'课程优势'
+    },
+    {
+      src:'../../../kuozhanzhuanhua.png',
+      title1:'拓展转化',
+      title2:'课程优势'
+    },
+    {
+      src:'https://www.cei.net.cn/static/report.6d2a09f0.png',
+      title1:'专属报告',
+      title2:'课程优势'
+    }
+  ]
 
   return (
     <div>
@@ -366,16 +393,19 @@ export default function index() {
             </Carousel>
           </div>
           {/* 课程优势 */}
-          <div>
+          <div style={{
+            display:"flex",
+            flexDirection:"column",
+            // 垂直居中
+            alignItems:"center",
+            //  水平居中
+            justifyContent: "center"}}>
             {/* 标题 */}
             <div style={{height:"40px",
                          margin:"20px auto",
                          textAlign:"center",
-                         display:"flex",
-                         // 垂直居中
-                         alignItems:"center",
-                        //  水平居中
-                         justifyContent: "center"}}>
+                         display:"flex"
+                        }}>
               {/* TODO图片位置写法 */}
               <img src='../../../tree.png' style={{height: "40px",marginRight: "10px"}}/>
               <span style={{height: "40px",
@@ -389,23 +419,27 @@ export default function index() {
                     }}>课程优势</span>
               <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
             </div>
-            <Row type="flex" justify="center" gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
-              <Col>
-                <img src="../../../luoshijichu.png"/>
-              </Col>
-              <Col>
-                <img src="../../../luoshijichu.png"/>
-              </Col>
-              <Col>
-                <img src="../../../luoshijichu.png"/>
-              </Col>
-              <Col>
-                <img src="../../../luoshijichu.png"/>
-              </Col>
-              <Col>
-                <img src="../../../luoshijichu.png"/>
-              </Col>
-            </Row>
+            <div style={{width:"80vw",padding:"20px 0",display:"flex",justifyContent:"space-between"}} >
+              {
+                merit.map((item,index)=>{
+                  return (
+                    // TODObackgroundSize: "cover"必须写在background中，且用/
+                      <div style={{
+                        height:"130px",
+                        width:"18%",
+                        background:`url(${item.src}) center / cover`,
+                        color:"#fff",
+                        display:"flex",
+                        flexDirection:"column",
+                        justifyContent:"center",
+                        alignItems:"center"}}>
+                        <span style={{fontSize: "23px"}}>{item.title1}</span>
+                        <span style={{fontSize: "16px"}}>{item.title2}</span>
+                      </div>
+                  )
+                })
+              }
+            </div>
           </div>
         </Content>
         {/* 底部 */}
