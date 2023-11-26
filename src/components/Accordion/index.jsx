@@ -18,17 +18,17 @@ export default function Accordion() {
     for(var i = 0;i < drawerData.length;i++){
       let docMiddle = document.getElementById(i)
          if(i <=  index){
-             /* docMiddle.animate({left:i*195+"px"},800);
+             docMiddle.animate({left:i*195+"px"},800);
              setTimeout(() => {
                docMiddle.style.left = i*195+'px'
-             }, 750) */
-             docMiddle.style.left = i*195+'px'
+             }, 750)
+            //  docMiddle.style.left = i*195+'px'
          }else{
-            /* docMiddle.animate({left:(i+1)*195+390+"px"},800);
+            docMiddle.animate({left:(i+1)*195+270+"px"},800);
             setTimeout(() => {
-                   docMiddle.style.left = (i+1)*195+390+'px'
-            }, 750); */
-            docMiddle.style.left = (i+1)*195+390+'px'
+                   docMiddle.style.left = (i+1)*195+270+'px'
+            }, 750);
+            // docMiddle.style.left = (i+1)*195+390+'px'
          }
     }
   }
@@ -45,7 +45,7 @@ export default function Accordion() {
                   <div style={{float:"left"}} onMouseOver={()=> drawerClick(index)}>
                     <img src={item.smallImg}/>
                   </div>
-                  <img src={item.longImg}/>
+                  <img style={{paddingRight:195*(2-index)+'px'}} src={item.longImg}/>
                 </div>
               )
             })
