@@ -443,49 +443,86 @@ export default function index() {
           </div>
         </Content>
         {/* 底部 */}
-        <Footer style={{ textAlign: "center",backgroundColor:"#000",paddingTop: "80px" }}>
-          <Row  type="flex" justify="center" gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
-            <Col span={4} style={{color:"#fff"}}>
+        <Footer style={{backgroundColor:"#000",paddingTop: "80px",display:"flex",flexDirection:"column",alignItems:"center" }}>
+          <Row gutter={24} style={{maxWidth: "1430px"}} className="a_color_whiter">
+            <Col span={6} style={{color:"#fff"}}>
               <p>客服咨询</p>
               <p>服务电话：024-23407031</p>
               <p>在线客服：立即咨询</p>
               <p>服务邮箱：passport@cei.net.cn</p>
               <p>周一至周五：9:00-18:00</p>
             </Col>
-            <Col span={10} style={{color:"#fff",width:"auto"}}>  
-              <Row type="flex" justify="center" gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
+            <Col span={12} style={{color:"#fff",width:"auto"}}>  
+              <Row type="flex" justify="space-around" gutter={24}>
                 <Col style={{color:"#fff"}}>生态环境部及直属单位</Col>
                 <Col style={{color:"#fff"}}>各省市服务单位</Col>
               </Row>
-              <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
-                <Col><a href="http://zfj.mee.gov.cn">生态环境执法局</a></Col>
-                <Col><a href="http://jcs.mee.gov.cn">生态环境监测司</a></Col>
-                <Col><a href="http://rss.mee.gov.cn">行政体制与人事司</a></Col>
-                <Col><a href="http://qhs.mee.gov.cn">应对气候变化司</a></Col>
-                <Col><a href="http://www.cnemc.cn">中国环境监测总站</a></Col>
-                <Col><a href="http://www.chinaeol.net">环保部宣传教育中心</a></Col>
-                <Col><a href="https://yjb.mee.gov.cn/">环境应急与事故调查中心</a></Col>
-                <Col><a href="http://www.cenews.com.cn">中国环境报社</a></Col>
-                <Col><a href="http://www.caep.org.cn/">环境规划院</a></Col>
-                <Col><a href="http://zfj.mee.gov.cn">中国-东盟环境保护合作中心</a></Col>
-                <Col><a href="http://www.edcmep.org.cn">中日友好环境保护中心（环境发展中心）</a></Col>
-                <Col><a href="http://www.prcee.org">环境与经济政策研究中心</a></Col>
-                <Col><a href="http://www.sepact.com">北京会议与培训基地</a></Col>
-                <Col><a href="http://www.bdhetec.com.cn">北戴河环境技术交流中心</a></Col>
+              <Row  type="flex" justify="space-between" gutter={24}>
+                <a href="http://zfj.mee.gov.cn">生态环境执法局</a>  
+                <a href="http://jcs.mee.gov.cn">生态环境监测司</a>  
+                <a href="http://rss.mee.gov.cn">行政体制与人事司</a>  
+                <a href="http://qhs.mee.gov.cn">应对气候变化司</a>  
+                <a href="http://www.cnemc.cn">中国环境监测总站</a>  
+                <a href="http://www.chinaeol.net">环保部宣传教育中心</a>  
+                <a href="https://yjb.mee.gov.cn/">环境应急与事故调查中心</a>  
+                <a href="http://www.cenews.com.cn">中国环境报社</a> 
+                <a href="http://www.caep.org.cn/">环境规划院</a>  
+                <a href="http://zfj.mee.gov.cn">中国-东盟环境保护合作中心</a> 
+                <a href="http://www.edcmep.org.cn">中日友好环境保护中心（环境发展中心）</a> 
+                <a href="http://www.prcee.org">环境与经济政策研究中心</a> 
+                <a href="http://www.sepact.com">北京会议与培训基地</a>  
+                <a href="http://www.bdhetec.com.cn">北戴河环境技术交流中心</a>  
               </Row>
             </Col>
-            <Col span={2} style={{color:"#fff"}}>快速入口</Col>
-            <Col span={2} style={{color:"#fff"}}>关于我们</Col>
+            <Col span={3} style={{color:"#fff"}}>
+              <Row>
+                <Col style={{color:"#fff"}}>快速入口</Col>
+              </Row>
+              <Row  style={{flexDirection:"column"}}>
+                <a href="http://zfj.mee.gov.cn">个人中心</a>
+                <a href="http://jcs.mee.gov.cn">购物车</a>
+                <a href="http://rss.mee.gov.cn">我的订单</a>
+                <a href="http://qhs.mee.gov.cn">登录/注册</a>
+              </Row>
+            </Col>
+            <Col span={3} style={{color:"#fff"}}>
+              <Row>
+                <Col style={{color:"#fff"}}>关于我们</Col>
+              </Row>
+              <Row style={{flexDirection:"column"}}>
+                <a href="http://zfj.mee.gov.cn">生态环境执法局</a>
+                <a href="http://jcs.mee.gov.cn">生态环境监测司</a>
+                <a href="http://rss.mee.gov.cn">行政体制与人事司</a>
+                <a href="http://qhs.mee.gov.cn">应对气候变化司</a>
+                <a href="http://www.cnemc.cn">中国环境监测总站</a>
+              </Row>
+            </Col>
           </Row>
-          <div style={{color:"#fff",marginBottom:"0"}} >
+          <Row style={{alignItems:"center"}}>
+            <Col>
+            <a style={{height:"20px",lineHeight:"20px",display: "inline-block"}}>
+              <img style={{float:"left"}} src="https://www.cei.net.cn/static/beian_guohui.d0289dc0.png"/>
+              <p style={{color: "#939393",float:"left"}}>京公网安备 11010102004423号</p>
+            </a>
+            
+            </Col>
+            <Col>
+            <a style={{height:"50px",display: "inline-block"}}>
+              <img style={{height:"100%",width:"100%"}} src="https://program.xinchacha.com/web/1585481618913452032=*.cei.net.cn.svg"/>
+            </a>
+            </Col>
+          </Row>
+        </Footer>
+
+        <div style={{textAlign:"center", background: "#424242",color:"#fff",padding:"5px 0"}} >
             <span>
               Copyright2023 西尔环境教育（CEI）版权所有 主办单位：北京西尔云教育科技有限公司&nbsp;
-              <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">京ICP备19011394号-2</a> 
+              <a style={{color:"#1fa2f8"}} href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">京ICP备19011394号-2</a> 
               出版物经营许可证：
-              <a href="/front/cert" target="_blank" rel="noopener noreferrer">新出发京零字第海180213号</a>
+              <a style={{color:"#1fa2f8"}} href="/front/cert" target="_blank" rel="noopener noreferrer">新出发京零字第海180213号</a>
             </span>
           </div>
-        </Footer>
+
       </Layout>
     </div>
   );
