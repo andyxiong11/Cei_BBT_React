@@ -1,5 +1,10 @@
 import { Row, Col } from 'antd';
 import { useState } from "react";
+
+// 引入swiper
+import Swiper from "swiper/swiper-bundle.min.js"
+import  "swiper/swiper-bundle.min.css"
+
 import './index.css'
 import slide_one from '../../../public/shizhanlianbin.jpg'
 import slide_two from '../../../public/jianbinpeixun.jpg'
@@ -14,19 +19,19 @@ export default function Accordion() {
     {num : 2 ,smallImg :slide_one , longImg : slide_long_one},
     {num : 3 ,smallImg :slide_three , longImg : slide_long_three},
   ])
-  function drawerClick(index) {
+  let drawerClick = (index) => {
     for(var i = 0;i < drawerData.length;i++){
       let docMiddle = document.getElementById(i)
          if(i <=  index){
-             docMiddle.animate({left:i*195+"px"},800);
+             docMiddle.animate({left:i*200+"px"},800);
              setTimeout(() => {
-               docMiddle.style.left = i*195+'px'
+               docMiddle.style.left = i*200+'px'
              }, 750)
             //  docMiddle.style.left = i*195+'px'
          }else{
-            docMiddle.animate({left:(i+1)*195+270+"px"},800);
+            docMiddle.animate({left:(i+1)*200+400+"px"},800);
             setTimeout(() => {
-                   docMiddle.style.left = (i+1)*195+270+'px'
+                   docMiddle.style.left = (i+1)*200+400+'px'
             }, 750);
             // docMiddle.style.left = (i+1)*195+390+'px'
          }
@@ -34,18 +39,18 @@ export default function Accordion() {
   }
   return (
     <div>
-      <Row type="flex" justify="center">
-          <div style={{height: "270px",width: '1245px',position:"relative",margin:"50px 0",overflow:"hidden"}}>
+      <Row style={{width : "100%",position: "relative",display: "flex",flexDirection: "column",alignItems: "center"}}>
+          <div style={{height: "270px",width: '1200px',position:"relative",margin:"30px 0",overflow:"hidden",boxSizing: "border-box"}}>
           {
             drawerData.map((item,index)=>{
               return (
                 // 绝对定位
-                <div id={index} style={{height:"100%",position:"absolute",left:index*195 + 'px'}}>
+                <div id={index} style={{position:"absolute",top:"0px",left:"0px",left:index*200 + 'px',zIndex:index*5,boxSizing: "border-box"}}>
                   {/* 浮动定位 */}
-                  <div style={{float:"left"}} onMouseOver={()=> drawerClick(index)}>
-                    <img src={item.smallImg}/>
+                  <div style={{width:"200px",height:"100%",position:"absolute",left:"0px",top:"0px"}} onMouseOver={()=> drawerClick(index)}>
+                    <img style={{width:"100%",height:"100%"}} src={item.smallImg}/>
                   </div>
-                  <img style={{paddingRight:195*(2-index)+'px'}} src={item.longImg}/>
+                  <img style={{width:"100%",height:"270px",paddingLeft:"200px",paddingRight:200*(2-index)+'px'}} src={item.longImg}/>
                 </div>
               )
             })
