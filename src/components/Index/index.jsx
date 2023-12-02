@@ -9,10 +9,10 @@ import {
   PhoneOutlined,
 } from "@ant-design/icons"; //TODO新版本antd，按需引入
 
-import {Navigation} from 'swiper/modules'
+/* import {Navigation} from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/navigation'; */
 
 import Accordion from '../Accordion'
 import Floor from '../Floor'
@@ -198,7 +198,7 @@ export default function index() {
             </ul>
           </Affix>
           {/* 轮播图 */}
-          <Swiper
+          {/* <Swiper
               modules={[Navigation]}
               spaceBetween={50}
               slidesPerView={1}//slider容器能够同时显示的slides数量
@@ -223,7 +223,7 @@ export default function index() {
                 style={{ width: "100%" }}
                 src="https://data.cei.net.cn/images/product/1678783346954.jpg"
               /></SwiperSlide>
-          </Swiper>
+          </Swiper> */}
           <Carousel autoplay>
             <div>
               <img
