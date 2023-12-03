@@ -26,7 +26,7 @@ export default class Accordion extends Component {
 drawerClick = (index) => {
   let drawArr = this.state.drawerData
   for(var i = 0;i < drawArr.length;i++){
-    let docMiddle = window.getElementById(i)
+    let docMiddle = document.getElementById(i)
        if(i <=  index){
            docMiddle.animate({left:i*200+"px"},800);
            setTimeout(() => {
