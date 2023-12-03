@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect } from "react";
 // Layout布局；Row, Col栅格组件；Menu导航菜单；Input输入框；Button按钮；Carousel跑马灯
 import { Layout, Row, Col, Menu, Input, Button, Carousel, Affix } from "antd";
 import {
@@ -13,6 +13,9 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation'; */
+// 引入老版本SWIPER
+import Swiper from "swiper/swiper-bundle.min.js"
+import  "swiper/swiper-bundle.min.css"
 
 import Accordion from '../Accordion'
 import Floor from '../Floor'
@@ -20,7 +23,7 @@ import EchartsMap from '../EchartsMap'
 import {data} from "./data.js"
 import "./index.css";
 
-export default function index() {
+export default function Index() {
   // antd组件
   const { Header, Footer, Content } = Layout;
   const { SubMenu } = Menu;
@@ -52,6 +55,20 @@ export default function index() {
       title2:'课程优势'
     }
   ]
+
+
+  useEffect(() => {
+    var ceiHonorSwiper = new Swiper ('.cei_honor_banner', {
+      observer:true,
+      observeParents:true,                    
+       loop: true,
+       loopFillGroupWithBlank: true,
+       navigation: {
+         nextEl: '.honor_swiper_button_nest',
+         prevEl: '.honor_swiper_button_prev',
+      },
+    }) 
+  });
 
   return (
     <div>
@@ -380,7 +397,7 @@ export default function index() {
               <div style={{width:"10px",height:"10px",backgroundColor: "#4aa1f0",marginTop:"30px"}}></div>
             </div>
             {/* 轮播图 */}
-            <Carousel autoplay>
+            {/* <Carousel autoplay>
               <div >
                 <img style={{width:"100%"}} src="https://www.cei.net.cn/static/home_zhengshu1.6f426679.jpg"/>
               </div>
@@ -390,7 +407,24 @@ export default function index() {
               <div>
                 <img style={{width:"100%"}} src="	https://www.cei.net.cn/static/home_zhengshu3.ae3cd6d3.jpg"/>
               </div>
-            </Carousel>
+            </Carousel> */}
+            <Row style={{justifyContent: "center",alignItems: "center"}}>
+              <div className='swiper-container cei_honor_banner'>
+                <div className='swiper-wrapper'>
+                  <div  className='swiper-slide' style={{padding : "0 100px"}}>
+                    <img src="https://www.cei.net.cn/static/home_zhengshu1.6f426679.jpg" alt=""/>
+                  </div>
+                  <div  className='swiper-slide' style={{padding : "0 100px"}}>
+                    <img src="https://www.cei.net.cn/static/home_zhengshu2.6c9d769f.jpg" alt=""/>
+                  </div>
+                  <div className='swiper-slide' style={{padding : "0 100px"}}>
+                    <img src="https://www.cei.net.cn/static/home_zhengshu3.ae3cd6d3.jpg" alt=""/>
+                  </div>
+                </div>
+                <div className= {'honor_swiper_button_nest'}></div>
+                <div className= {'honor_swiper_button_prev'} ></div>
+              </div>  
+            </Row>
           </div>
           {/* 课程优势 */}
           <div style={{

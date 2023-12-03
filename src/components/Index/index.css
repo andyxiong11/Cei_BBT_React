@@ -11,3 +11,33 @@
 a{
   color:#fff;
 }
+
+/* 西尔荣誉轮播 */
+.cei_honor_banner{
+  max-width: 1230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/* 轮播图按钮 */
+.honor_swiper_button_nest{
+  background: url("../../../public/nest.png");
+  height : 100px;
+  width : 30px;
+  position: absolute;
+  top : 120px;
+  left :10px;
+  z-index: 100;/*不加无法点击*/
+  cursor: pointer;
+}
+.honor_swiper_button_prev{
+  background: url("../../../public/prev.png");
+  height : 100px;
+  width : 30px;
+  position: absolute;
+  top : 120px;
+  right :10px;
+  z-index: 100;/*不加无法点击*/
+  cursor: pointer;
+}
