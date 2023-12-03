@@ -12,6 +12,66 @@ a{
   color:#fff;
 }
 
+/* 头部轮播 */
+.topSlide_banner{
+  width: "100%";
+  position: relative;
+}
+/* 轮播图按钮 */
+.topSlide_swiper_button_nest{
+  background: url("../../../public/nest.png");
+  height : 100px;
+  width : 30px;
+  position: absolute;
+  top : 120px;
+  left :10px;
+  z-index: 100;/*不加无法点击*/
+  cursor: pointer;
+}
+.topSlide_swiper_button_prev{
+  background: url("../../../public/prev.png");
+  height : 100px;
+  width : 30px;
+  position: absolute;
+  top : 120px;
+  right :10px;
+  z-index: 100;/*不加无法点击*/
+  cursor: pointer;
+}
+/* swiper组件的内部样式 */
+/* 整体 */
+.pagination_bottom_con{
+  width : 100%;
+  height: 32px;
+  line-height: 32px;
+  border-right: 2px solid #fff;
+  margin-right: -2px;
+  color : #fff;
+}
+/* 单个分页器默认样式 */
+.swiper-pagination-bullet{
+  width:150px;
+  height:50px;
+  background-color : rgba(60,60,60,0.8);
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.6;/*透明度*/
+}
+/* 单个分页器已选中时 */
+.swiper-pagination-bullet-active{
+  opacity: 1;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin : 0px 0px -10px;
+}
+/* 最后一个分页器没有分割线 */
+.swiper-pagination  .swiper-pagination-bullet:last-child{
+  .pagination_bottom_con{
+        border : none;
+  }
+}
+
 /* 西尔荣誉轮播 */
 .cei_honor_banner{
   max-width: 1230px;

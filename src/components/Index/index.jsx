@@ -28,6 +28,7 @@ export default function Index() {
   const { Header, Footer, Content } = Layout;
   const { SubMenu } = Menu;
   const { Search } = Input;
+  // 课程优势
   const merit = [
     {
       src:'../../../luoshijichu.png',
@@ -55,9 +56,80 @@ export default function Index() {
       title2:'课程优势'
     }
   ]
+  // 顶部轮播图
+  const topSlide = [
+    {
+      num:0,
+      src:"https://data.cei.net.cn/images/product/1678758914412.jpg",
+      title:"环保书籍"
+    },
+    {
+      num:1,
+      src:"https://data.cei.net.cn/images/product/1678859575872.jpg",
+      title:"618大促"
+    },
+    {
+      num:2,
+      src:"https://data.cei.net.cn/images/product/1685946053778.jpg",
+      title:"企业管理"
+    },
+    {
+      num:3,
+      src:"https://data.cei.net.cn/images/product/1678783346954.jpg",
+      title:"第三方服务"
+    },
+    {
+      num:4,
+      src:"https://data.cei.net.cn/images/product/1682565542094.jpg",
+      title:"环境执法"
+    },
+    {
+      num:5,
+      src:"https://data.cei.net.cn/images/product/1682565562660.jpg",
+      title:"西尔课程录制"
+    },
+    {
+      num:6,
+      src:"https://data.cei.net.cn/images/product/1654849687735.jpg",
+      title:"学习网"
+    },
+    {
+      num:7,
+      src:"https://data.cei.net.cn/images/product/1654849878917.jpg",
+      title:"新书上架"
+    }       
+  ]
 
 
   useEffect(() => {
+    // 头部轮播图
+    var topSlideSwiper = new Swiper ('.topSlide_banner', {
+      direction: 'horizontal', // 垂直切换选项
+      loop: true, // 循环模式选项
+      autoplay : {
+        delay : 1000,
+      },
+      // 分页器
+      pagination: {
+        el: '.swiper-pagination',
+        clickable :true,
+        renderBullet: function (index, className) {
+          return `<span class=${className}> 
+                     <div class='pagination_bottom_con'>${topSlide[index].title} </div>  
+                  </span>`;
+        }
+      },
+      // 前进后退按钮
+      navigation: {
+        nextEl: '.topSlide_swiper_button_nest',
+        prevEl: '.topSlide_swiper_button_prev',
+      },
+      // 滚动条
+      // scrollbar: {
+      //   el: '.swiper-scrollbar',
+      // }
+    }); 
+    // 西尔荣耀轮播图
     var ceiHonorSwiper = new Swiper ('.cei_honor_banner', {
       observer:true,
       observeParents:true,                    
@@ -67,7 +139,7 @@ export default function Index() {
          nextEl: '.honor_swiper_button_nest',
          prevEl: '.honor_swiper_button_prev',
       },
-    }) 
+    });
   });
 
   return (
@@ -215,7 +287,7 @@ export default function Index() {
             </ul>
           </Affix>
           {/* 轮播图 */}
-          {/* <Swiper
+          {/* {<Swiper
               modules={[Navigation]}
               spaceBetween={50}
               slidesPerView={1}//slider容器能够同时显示的slides数量
@@ -240,8 +312,8 @@ export default function Index() {
                 style={{ width: "100%" }}
                 src="https://data.cei.net.cn/images/product/1678783346954.jpg"
               /></SwiperSlide>
-          </Swiper> */}
-          <Carousel autoplay>
+          </Swiper>} */}
+          {/* <Carousel autoplay>
             <div>
               <img
                 style={{ width: "100%" }}
@@ -290,7 +362,27 @@ export default function Index() {
                 src="https://data.cei.net.cn/images/product/1654849878917.jpg"
               />
             </div>
-          </Carousel>
+          </Carousel> */}
+          <Row style={{justifyContent: "center",alignItems: "center"}}>
+              <div className='swiper-container topSlide_banner'>
+                <div className='swiper-wrapper'>
+                  {
+                    topSlide.map((item,index)=>{
+                      // console.log("轮播",item);
+                      return (
+                        <div style={{width:"100%",height:"460px"}} className='swiper-slide'>
+                          <img style={{width:"100%",backgroundSize: "cover"}}  src={item.src} alt=""/>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+                <div className='swiper-pagination'> </div>
+                <div className= {'topSlide_swiper_button_nest'}></div>
+                <div className= {'topSlide_swiper_button_prev'} ></div>
+              </div>  
+            </Row>
+          {/* 水平手风琴 */}
           <Accordion/>
           {/* <Row type="flex" justify="center">
               <Col>
