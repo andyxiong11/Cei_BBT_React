@@ -149,7 +149,7 @@ export default function Index() {
         <Header
           style={{
             position: "fixed",
-            zIndex: 1,
+            zIndex: 30,
             width: "100%",
             backgroundColor: "#fff",
             float: "left",
