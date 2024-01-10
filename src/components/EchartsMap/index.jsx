@@ -7,41 +7,26 @@ import { MapChart } from 'echarts/charts';
 
 // 引入阿里云下载的中国地图的数据 https://datav.aliyun.com/portal/school/atlas/area_selector
 import { geoJson } from "./geojson";
-import { chinaMapConfig } from "./config";
+
 import { resData } from "./data";
+import { chinaMapConfig } from "./config";
 
 export default function EchartsMap() {
   // 初始化ref状态为null
   const ref = useRef(null);
   let mapInstance = null;
 
-  const renderMap = () => {
-    // 通过 echarts.getInstanceByDom 获取 dom 容器上的实例
-    const renderedMapInstance = echarts.getInstanceByDom(ref.current);
-    if (renderedMapInstance) {
-      mapInstance = renderedMapInstance;
-    } else {
-      // 基于准备好的dom，初始化echarts实例
-      mapInstance = echarts.init(ref.current);
-    }
-    mapInstance.setOption(
-      chinaMapConfig({ data: resData.data, max: resData.max, min: 0 })
-    );
-  };
+
+      
   // 组件每次渲染时执行
   useEffect(() => {
     echarts.use([MapChart]);
     // 必须在使用 use 方法注册了 MapChart 后才能使用 registerMap 注册地图
     echarts.registerMap('china', {geoJSON:geoJson});
-    renderMap();
-  }, []);
-  useEffect(() => {
-    window.onresize = function () {
-      mapInstance.resize();
-    };
-    return () => {
-      mapInstance && mapInstance.dispose();
-    };
+    mapInstance = echarts.init(ref.current);
+    mapInstance.setOption(
+      chinaMapConfig({ data: resData.data, max: resData.max, min: 0 })
+    );
   }, []);
   return (
     <div>

@@ -1,6 +1,6 @@
 export const chinaMapConfig = (configData) => {
   const { data, max, min } = configData;
-
+  // console.log(data);
   return {
     // 标题
     /* title: {
@@ -27,7 +27,7 @@ export const chinaMapConfig = (configData) => {
       }
     },
     // 视觉映射组件
-    /* visualMap: {
+    visualMap: {
       type: "continuous", // 连续型
       left: "right", // visualMap 组件离容器左侧的距离,值为`'left'`, `'center'`, `'right'`，组件会根据相应的位置自动对齐。
       min: 0,        // 指定允许的最小值
@@ -35,25 +35,25 @@ export const chinaMapConfig = (configData) => {
       inRange: {     // 定义 **在选中范围中** 的视觉元素
           // 图元的颜色
           // 这里以这数组所填写的颜色点作为基准，形成一种『渐变』的色带，数据映射到这个色带上
-          color: [ // 橘色效果
+          /* color: [ // 橘色效果
               "#fff",
               "#fedeb5",
               "#f96a35",
               "#c3380e",
               "#942005"
-          ]
-         // color: [ // 蓝色效果
-         //     '#e5f7ff',
-         //     '#096dd9',
-         // ]
+          ] */
+         color: [ // 蓝色效果
+             '#e5f7ff',
+             '#096dd9',
+         ]
       },
       text: [`最大值：${max}`, 0],  // 两端的文本,如 `['High', 'Low']`
       textStyle: {
           color: "#000" // visualMap 文字的颜色。
       }
-    }, */
+    },
     // 工具栏
-    /* toolbox: {
+    toolbox: {
       show: true,// 是否显示工具栏组件。
       left: "left",// 工具栏组件离容器左侧的距离
       top: "top",
@@ -62,13 +62,14 @@ export const chinaMapConfig = (configData) => {
         restore: {},// 配置项还原
         saveAsImage: {} // 保存为图片
       }
-    }, */
+    },
     // 数据集组件
-/*     dataset: {
+    dataset: {
       source: data
-    }, */
+    },
     // 地图主要用于地理区域数据的可视化
     series: {
+       
       // 地图,可以是数组，多个
       label: {// 图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等。
         show: true, //显示省市名称
@@ -89,7 +90,7 @@ export const chinaMapConfig = (configData) => {
         min: 1 // 设置默认缩放效果
       },
       top: "10%", // 距离顶部距离
-      data:[
+      /* data:[
         {
           name: "北京",
           value: 218
@@ -226,7 +227,7 @@ export const chinaMapConfig = (configData) => {
           value: 1,
           name: "海南"
         }
-      ]
+      ] */
 
       // data: [
       //   { name: "内蒙古", value: 1000 },
